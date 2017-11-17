@@ -2,52 +2,89 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'DreamTeam.com';
 ?>
-<div class="site-index">
+<div>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+    <section id="gtco-about" data-section="about">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+                    <h1>Welcome To Our Law Offices</h1>
+                    <p class="sub">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias au
+                        tem provident. Odit ab aliquam dolor eius.</p>
+                    <p class="subtle-text animate-box" data-animate-effect="fadeIn">Welcome</p>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="row">
+                <div class="col-md-6 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
+                    <div class="img-shadow">
+                        <img src="images/img_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                    </div>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <h2 class="heading-colored">Excellence &amp; Honesty   &amp; Coach</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut praesentium nihil hic quam culpa magnam ducimus suscipit repellat quidem cumque, unde impedit, labore earum eligendi perspiciatis nemo molestiae sequi veritatis. Veritatis, reprehenderit, eaque! Rerum, libero ipsam enim, iusto adipisci quae repellendus officia consequatur ducimus cupiditate impedit, aliquam numquam excepturi.</p>
+                    <p><a href="#" class="read-more">Read more <i class="icon-chevron-right"></i></a></p>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
+    <section id="gtco-our-team" data-section="our-team">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+                    <h1>Our Team</h1>
+                    <p class="sub">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                    <p class="subtle-text animate-box" data-animate-effect="fadeIn">Our Team</p>
+                </div>
+            </div>
+            <div class="row team-item gtco-team-reverse">
+                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
+                    <div class="img-shadow">
+                        <img src="images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                    </div>
+                </div>
+                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+                    <h2>Matvey Svetlichny</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
+                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
+                </div>
+            </div>
+
+            <div class="row team-item gtco-team">
+                <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
+                    <div class="img-shadow">
+                        <img src="images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                    </div>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <h2>Yulia Emelyanenko</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
+                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
+                </div>
+            </div>
+
+
+
+            <div class="row team-item gtco-team-reverse">
+                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
+                    <div class="img-shadow">
+                        <img src="images/img_team_3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                    </div>
+                </div>
+                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
+                    <h2>Karina Papyan</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
+                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </section>
 </div>

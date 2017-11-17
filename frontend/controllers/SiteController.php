@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\UserInfo;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\User;
 
 /**
  * Site controller
@@ -38,12 +40,6 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -106,6 +102,29 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionPersonalArea(){
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $user = UserInfo::getUserInfo(yii::$app->user->id);
+
+        if ($user->load(Yii::$app->request->post())){
+            if($user->edit())
+            {
+                return $this->goBack();
+            }
+        }else {
+            return $this->render('personalArea', [
+                'user' => $user,
+            ]);
+        }
+
+
+
+
     }
 
     /**

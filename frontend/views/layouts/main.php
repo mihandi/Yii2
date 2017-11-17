@@ -26,27 +26,37 @@ AppAsset::register($this);
 <div class="gtco-loader"></div>
 
 <div id="page">
-    <nav class="gtco-nav" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2 col-xs-12">
-                    <div id="gtco-logo"><a href="#">Dream<em>team</em></a></div>
+
+        <nav class="gtco-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-12">
+                        <div id="gtco-logo"><a href="/">Dream<em>team</em></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1 ">
+                        <ul>
+                            <?php if (Yii::$app->controller->route == 'site/index'):?>
+                                <li class="active main-nav" ><a href = "/" data-nav-section = "home"> Home</a></li>
+                                <li class="main-nav"><a href="/" data-nav-section = "about" > About</a></li>
+                                <li class="main-nav"><a href="/" data-nav-section = "our-team" > Our Team </a></li>
+                            <?php endif;?>
+
+                            <?php if (Yii::$app->user->isGuest): ?>
+                                <li class="btn-cta"><a href="index.php?r=site%2Flogin"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="index.php?r=site%2Fsignup"><span>Sign up</span></a></li>
+                            <?php else: ?>
+                                <li class="btn-cta"><a href="index.php?r=site%2Fpersonal-area"><span>Personal Area</span></a></li>
+                                <li class="btn-cta"><a href="index.php?r=site%2Flogout"><span>Logout <?=Yii::$app->user->identity->username?></span></a></li>
+                            <?php endif;?>
+
+                        </ul>
+                            <!-- For external page link -->
+                            <!-- <li><a href="http://freehtml5.co/" class="external">External</a></li> -->
+
                 </div>
-                <div class="col-xs-10 text-right menu-1 main-nav">
-                    <ul>
-                        <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-                        <li><a href="#" data-nav-section="about">About</a></li>
-                        <li><a href="#" data-nav-section="our-team">Our Team</a></li>
-                        <li class="btn-cta"><a href="#" data-nav-section="contact"><span>Contact</span></a></li>
-                        <!-- For external page link -->
-                        <!-- <li><a href="http://freehtml5.co/" class="external">External</a></li> -->
-                    </ul>
-                </div>
+
             </div>
-
-        </div>
-    </nav>
-
+        </nav>
     <section id="gtco-hero" class="gtco-cover" style="background-image: url(images/img_bg_4.jpg);"  data-section="home"  data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -64,89 +74,18 @@ AppAsset::register($this);
         </div>
     </section>
 
-    <section id="gtco-about" data-section="about">
-        <div class="container">
-            <div class="row row-pb-md">
-                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
-                    <h1>Welcome To Our Law Offices</h1>
-                    <p class="sub">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias au
-                        tem provident. Odit ab aliquam dolor eius.</p>
-                    <p class="subtle-text animate-box" data-animate-effect="fadeIn">Welcome</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="img-shadow">
-                        <img src="images/img_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                    <h2 class="heading-colored">Excellence &amp; Honesty   &amp; Coach</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut praesentium nihil hic quam culpa magnam ducimus suscipit repellat quidem cumque, unde impedit, labore earum eligendi perspiciatis nemo molestiae sequi veritatis. Veritatis, reprehenderit, eaque! Rerum, libero ipsam enim, iusto adipisci quae repellendus officia consequatur ducimus cupiditate impedit, aliquam numquam excepturi.</p>
-                    <p><a href="#" class="read-more">Read more <i class="icon-chevron-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container">
 
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
 
+        <?= Alert::widget() ?>
+    </div>
+    <div>
+        <?= $content ?>
 
-    <section id="gtco-our-team" data-section="our-team">
-        <div class="container">
-            <div class="row row-pb-md">
-                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
-                    <h1>Our Team</h1>
-                    <p class="sub">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                    <p class="subtle-text animate-box" data-animate-effect="fadeIn">Our Team</p>
-                </div>
-            </div>
-            <div class="row team-item gtco-team-reverse">
-                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
-                    <div class="img-shadow">
-                        <img src="images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
-                    <h2>Matvey Svetlichny</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
-
-            <div class="row team-item gtco-team">
-                <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
-                    <div class="img-shadow">
-                        <img src="images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                    <h2>Yulia Emelyanenko</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
-
-
-
-            <div class="row team-item gtco-team-reverse">
-                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
-                    <div class="img-shadow">
-                        <img src="images/img_team_3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
-                    <h2>Karina Papyan</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </section>
-
+    </div>
 
 
     <footer id="gtco-footer" role="contentinfo">
