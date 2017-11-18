@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use frontend\models\UserInfo;
+use UploadForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -13,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\UploadedFile;
 use yii\web\User;
 
 /**
@@ -112,10 +114,23 @@ class SiteController extends Controller
 
         $user_info = UserInfo::getUserInfo(yii::$app->user->id);
 
-//var_dump($_POST);die();
+
+//        var_dump($user_info);die();
+
+        $image_name = 'img_'.yii::$app->user->id.'.jpg';
+
+
+
         if ($user_info->load(Yii::$app->request->post()) && $user_info->edit())
         {
-                return $this->goBack();
+            if($file= UploadedFile::getInstance($user_info, 'file'))
+            {
+                $file->saveAs(Yii::getAlias('@frontendWeb').'/images/users/' .$image_name);
+                $user_info->img = $image_name;
+                $user_info->edit();
+            }
+
+            return $this->goBack();
         }else {
             return $this->render('personalArea', [
                 'user' => $user_info,
@@ -241,5 +256,10 @@ class SiteController extends Controller
         return $this->render('users', [
             'model' => $users,
         ]);
+    }
+
+    public function actionUser()
+    {
+        var_dump($this);die();
     }
 }

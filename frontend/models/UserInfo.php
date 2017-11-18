@@ -17,9 +17,11 @@ use yii\db\ActiveRecord;
  @property $rating
  @property $city
  @property $phoneNumber
+ @property $img
 */
 class UserInfo extends ActiveRecord
 {
+    public $file;
 
     public function rules()
     {
@@ -38,7 +40,10 @@ class UserInfo extends ActiveRecord
 
 
             ['phone_number', 'trim'],
-            ['phone_number', 'match', 'pattern' => '/^\+380\d{3}\d{2}\d{2}\d{2}$/', 'message' => 'kek' ]
+            ['phone_number', 'match', 'pattern' => '/^\+380\d{3}\d{2}\d{2}\d{2}$/', 'message' => 'kek' ],
+
+
+            ['file', 'file',  'extensions' => 'png, jpg']
 
 
 
@@ -46,6 +51,8 @@ class UserInfo extends ActiveRecord
 
         ];
     }
+
+
 
     public static function getUserInfo($user_id)
     {
@@ -57,6 +64,7 @@ class UserInfo extends ActiveRecord
 
     public function edit()
     {
+
         if (!$this->validate()) {
             return null;
         }

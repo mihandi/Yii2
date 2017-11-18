@@ -43,6 +43,8 @@ $this->title = 'DreamTeam.com';
                     <p class="subtle-text animate-box" data-animate-effect="fadeIn">Our Team</p>
                 </div>
             </div>
+
+
             <div class="row team-item gtco-team-reverse">
                 <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
                     <div class="img-shadow">
