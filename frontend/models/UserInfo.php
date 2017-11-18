@@ -58,7 +58,7 @@ class UserInfo extends ActiveRecord
     public function edit()
     {
         if (!$this->validate()) {
-            var_dump($this->errors);
+            return null;
         }
 
         return $this->save() ? $this : null;

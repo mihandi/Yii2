@@ -105,20 +105,20 @@ class SiteController extends Controller
     }
 
     public function actionPersonalArea(){
+
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
-        $user = UserInfo::getUserInfo(yii::$app->user->id);
+        $user_info = UserInfo::getUserInfo(yii::$app->user->id);
 
-        if ($user->load(Yii::$app->request->post())){
-            if($user->edit())
-            {
+//var_dump($_POST);die();
+        if ($user_info->load(Yii::$app->request->post()) && $user_info->edit())
+        {
                 return $this->goBack();
-            }
         }else {
             return $this->render('personalArea', [
-                'user' => $user,
+                'user' => $user_info,
             ]);
         }
 

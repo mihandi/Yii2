@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
 use common\models\User;
 
@@ -55,7 +56,7 @@ class SignupForm extends Model
 
         if ($user->save()) {
             $userInfo = new UserInfo();
-            $userInfo->user_id = $user->id;
+            $userInfo->user_id = (int)Yii::$app->db->getLastInsertID();
             $userInfo->save();
         }
         return $user->save() ? $user : null;
