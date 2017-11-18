@@ -64,6 +64,20 @@ class User extends ActiveRecord implements IdentityInterface
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
+    public static function selectAllInform()
+    {
+//        var_dump( Yii::$app->db->createCommand(
+//            "Select u.id,u.username,ui.id,ui.first_name From user u
+//              INNER JOIN user_info ui On u.id = ui.user_id")->queryAll());die();
+
+
+
+
+       return  Yii::$app->db->createCommand(
+           "Select u.id,u.username,ui.id,ui.first_name,ui.last_name,ui.bio,ui.img From user u 
+              INNER JOIN user_info ui On u.id = ui.user_id")->queryAll();
+    }
+
     /**
      * @inheritdoc
      */

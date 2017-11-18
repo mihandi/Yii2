@@ -229,4 +229,17 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionUserList()
+    {
+//        $users = new User();
+
+        $users = \common\models\User::selectAllInform();
+
+//        var_dump($users);die();
+
+        return $this->render('users', [
+            'model' => $users,
+        ]);
+    }
 }

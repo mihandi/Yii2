@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row team-item gtco-team">
             <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
                 <div class="img-shadow">
-                    <img src="images/<?= $user['img']??'default_img.jpg'?>" class="img-responsive" alt="picture of you">
+                    <img src="/images/<?= $user['img']??'default_img.jpg'?>" class="img-responsive" alt="picture of you">
                     <div class="form-group">
                         <?= Html::submitButton('Upload Photo', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                     </div>
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= $form->field($user, 'bio')->textarea(['rows' => '6']) ?>
 
                         <div class="form-group">
-                            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'submit-button']) ?>
                         </div>
 
                         <?php ActiveForm::end(); ?>
