@@ -12,32 +12,25 @@ use yii\web\IdentityInterface;
  *
  * @property integer $id
  * @property string $username
- * @property string $password_hash
- * @property string $password_reset_token
  * @property string $email
- * @property string $auth_key
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
- * @property string $password write-only password
+ * @property string $password
  */
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
-    const STATUS_ACTIVE = 10;
+    const STATUS_ACTIVE = 1;
+    const STATUS_PLAYER = 5;
+    const STATUS_ADMIN = 10;
 
 
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return '{{%user}}';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
@@ -45,159 +38,46 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function findIdentity($id)
-    {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
-    }
-
-    public static function selectAllInform()
-    {
-//        var_dump( Yii::$app->db->createCommand(
-//            "Select u.id,u.username,ui.id,ui.first_name From user u
-//              INNER JOIN user_info ui On u.id = ui.user_id")->queryAll());die();
-
-
-
-
-       return  Yii::$app->db->createCommand(
-           "Select u.id,u.username,ui.id,ui.first_name,ui.last_name,ui.bio,ui.img From user u 
-              INNER JOIN user_info ui On u.id = ui.user_id")->queryAll();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
-    }
-
-    /**
-     * Finds user by username
-     *
-     * @param string $username
-     * @return static|null
-     */
-    public static function findByUsername($username)
-    {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
-    }
-
-    /**
-     * Finds user by password reset token
-     *
-     * @param string $token password reset token
-     * @return static|null
-     */
-    public static function findByPasswordResetToken($token)
-    {
-        if (!static::isPasswordResetTokenValid($token)) {
-            return null;
-        }
-
-        return static::findOne([
-            'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
-        ]);
-    }
-
-    /**
-     * Finds out if password reset token is valid
-     *
-     * @param string $token password reset token
-     * @return bool
-     */
-    public static function isPasswordResetTokenValid($token)
-    {
-        if (empty($token)) {
-            return false;
-        }
-
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
-        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
-        return $timestamp + $expire >= time();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getId()
-    {
-        return $this->getPrimaryKey();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getAuthKey()
-    {
-        return $this->auth_key;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->getAuthKey() === $authKey;
-    }
-
-    /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
-     */
     public function validatePassword($password)
     {
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
+        return $this->password === $password;
     }
 
-    /**
-     * Generates password hash from password and sets it to the model
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
+    public static function selectAll($status = '1,5,10')
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+       return  Yii::$app->db->createCommand(
+           "Select u.id,u.username,ui.id,ui.first_name,ui.last_name,ui.bio,ui.img From ".self::tableName()." u 
+              INNER JOIN user_info ui On u.id = ui.user_id
+              Where u.status IN (:status)")
+           ->bindValue('status',$status)
+           ->queryAll();
     }
 
-    /**
-     * Generates "remember me" authentication key
-     */
-    public function generateAuthKey()
+
+    public static function findIdentity($id)
     {
-        $this->auth_key = Yii::$app->security->generateRandomString();
+        return self::findOne($id);
     }
 
-    /**
-     * Generates new password reset token
-     */
-    public function generatePasswordResetToken()
+    public function getId()
     {
-        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        return $this->id;
     }
 
-    /**
-     * Removes password reset token
-     */
-    public function removePasswordResetToken()
+    public static function findIdentityByAccessToken($token, $type = null)
     {
-        $this->password_reset_token = null;
+        // TODO: Implement findIdentityByAccessToken() method.
+    }
+
+
+
+    public function getAuthKey()
+    {
+        // TODO: Implement getAuthKey() method.
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        // TODO: Implement validateAuthKey() method.
     }
 }

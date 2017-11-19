@@ -42,9 +42,9 @@ AppAsset::register($this);
                                 <li class="btn-cta"><a href="/site/login"><span>Login</span></a></li>
                                 <li class="btn-cta"><a href="/site/signup"><span>Sign up</span></a></li>
                             <?php else: ?>
-                                <li class="btn-cta"><a href="/site/personal-area" class="external"><span>Personal Area</span></a></li>
-                                <li class="btn-cta"><a href="/site/user-list" class="external"><span>Users</span></a></li>
-                                <li class="btn-cta"><a href="/site/logout" class="external"><span>Logout <?=Yii::$app->user->identity->username?></span></a></li>
+                                <li class="btn-cta"><a href="/site/personal-area"><span>Personal Area</span></a></li>
+                                <li class="btn-cta"><a href="/site/user-list"><span>Users</span></a></li>
+                                <li class="btn-cta"><a href="/site/logout"><span>Logout <?=Yii::$app->user->identity->username?></span></a></li>
                             <?php endif;?>
 
                         </ul>
@@ -82,6 +82,7 @@ AppAsset::register($this);
         </div>
         <div>
             <?= $content ?>
+
         </div>
 
 

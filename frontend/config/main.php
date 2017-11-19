@@ -39,6 +39,9 @@ return [
 
         'urlManager' => [
             // Disable r= routes
+            'showScriptName' => false,
+            // Use pretty URLs
+            'enablePrettyUrl' => true,
             'rules' => [
                 '/' => 'site/index',
                 '/<action:[a-z\-]{1,50}>' => 'site/<action>',
