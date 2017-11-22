@@ -43,13 +43,14 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->password === $password;
     }
 
-    public static function selectAll($status = '1,5,10')
+    public static function selectAll($status = array(1,5,10))
     {
-       return  Yii::$app->db->createCommand(
+        $status = implode(',',$status);
+
+        return  Yii::$app->db->createCommand(
            "Select u.id,u.username,ui.id,ui.first_name,ui.last_name,ui.bio,ui.img From ".self::tableName()." u 
               INNER JOIN user_info ui On u.id = ui.user_id
-              Where u.status IN (:status)")
-           ->bindValue('status',$status)
+              Where u.status IN ($status)")
            ->queryAll();
     }
 

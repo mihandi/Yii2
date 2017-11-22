@@ -70,7 +70,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $users = \common\models\User::selectAll(array(5,10));
+
+//        var_dump($users);die();
+        return $this->render('index',['model' => $users]);
     }
 
     /**
@@ -90,7 +93,7 @@ class SiteController extends Controller
 
         if ($login->validate())
         {
-            Yii::$app->user->login($login->getUser());
+            $login->login();
             return $this->goHome();
 //            var_dump('throw');die();
         }
@@ -121,14 +124,10 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $user_info = UserInfo::getUserInfo(yii::$app->user->id);
-
-
-//        var_dump($user_info);die();
-
+        if (!$user_info = UserInfo::getUserInfo(yii::$app->user->id)){
+            $user_info = new UserInfo();
+        }
         $image_name = 'img_'.yii::$app->user->id.'.jpg';
-
-
 
         if ($user_info->load(Yii::$app->request->post()) && $user_info->edit())
         {
@@ -164,7 +163,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+                    return $this->redirect('personal-area');
                 }
             }
         }

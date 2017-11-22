@@ -63,6 +63,11 @@ class LoginForm extends Model
 
     }
 
+    public function login()
+    {
+        return Yii::$app->user->login($this->getUser());
+    }
+
 
 
     public function getUser()

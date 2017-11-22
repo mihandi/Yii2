@@ -17,7 +17,7 @@ class AppAsset extends AssetBundle
         "css/magnific-popup.css",
         "css/owl.carousel.min.css",
         "css/owl.theme.default.min.css",
-//        "css/flexslider.css",                 // не трогать, а то полетит js
+        "css/flexslider.css",                 // не трогать, а то полетит js
         "css/style.css"
     ];
     public $js = [

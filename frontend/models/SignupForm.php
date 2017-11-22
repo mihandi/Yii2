@@ -53,11 +53,11 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->password = $this->password;
 
-        if ($user->save()) {
-            $userInfo = new UserInfo();
-            $userInfo->user_id = (int)Yii::$app->db->getLastInsertID();
-            $userInfo->save();
-        }
+//        if ($user->save()) {
+//            $userInfo = new UserInfo();
+//            $userInfo->user_id = (int)Yii::$app->db->getLastInsertID();
+//            $userInfo->save();
+//        }
         return $user->save() ? $user : null;
     }
 }

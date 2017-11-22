@@ -22,7 +22,7 @@ $this->title = 'DreamTeam.com';
             <div class="row">
                 <div class="col-md-6 col-md-pull-1">
                     <div>
-                        <img src="/images/img_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                        <img src="images/img_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                     </div>
                 </div>
                 <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
@@ -48,7 +48,7 @@ $this->title = 'DreamTeam.com';
             <div class="row team-item gtco-team-reverse">
                 <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
                     <div class="img-shadow">
-                        <img src="/images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                        <img src="images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                     </div>
                 </div>
                 <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
@@ -61,7 +61,7 @@ $this->title = 'DreamTeam.com';
             <div class="row team-item gtco-team">
                 <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
                     <div class="img-shadow">
-                        <img src="/images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                        <img src="images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                     </div>
                 </div>
                 <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">

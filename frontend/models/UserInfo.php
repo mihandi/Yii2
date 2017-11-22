@@ -27,6 +27,7 @@ class UserInfo extends ActiveRecord
     {
         return [
             ['first_name', 'trim'],
+            ['first_name', 'required'],
             ['first_name', 'string', 'min' => 2, 'max' => 100],
 
             ['last_name', 'trim'],
@@ -38,16 +39,14 @@ class UserInfo extends ActiveRecord
             ['city', 'trim'],
             ['city','string', 'min' => 2, 'max' => 100],
 
-
             ['phone_number', 'trim'],
             ['phone_number', 'match', 'pattern' => '/^\+380\d{3}\d{2}\d{2}\d{2}$/', 'message' => 'kek' ],
 
 
-            ['file', 'file',  'extensions' => 'png, jpg']
+            ['file', 'file',  'extensions' => 'png, jpg'],
 
-
-
-
+            ['bio', 'trim'],
+            ['bio', 'required'],
 
         ];
     }
@@ -57,13 +56,11 @@ class UserInfo extends ActiveRecord
     public static function getUserInfo($user_id)
     {
         return static::findOne(['user_id' => $user_id]);
-
-//        Yii::$app->db->createCommand("SELECT * FROM `user_info` WHERE `user_id`=:user_id")
-//            ->bindValue(":user_id", $user_id,PDO::PARAM_INT)->queryOne();
     }
 
     public function edit()
     {
+        $this->user_id  = yii::$app->user->id;
 
         if (!$this->validate()) {
             return null;
