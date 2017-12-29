@@ -1,6 +1,8 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\ProductCategory;
+use backend\models\ShopProduct;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -22,7 +24,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','index'],
                         'allow' => true,
                     ],
                     [
@@ -30,12 +32,6 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];

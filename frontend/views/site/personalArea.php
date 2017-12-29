@@ -13,16 +13,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <section id="gtco-about" data-section="about">
             <?php $form = ActiveForm::begin(['options' =>['enctype' => 'multipart/form-data']]); ?>
 
-        <div class="row team-item gtco-team">
-            <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
-                <div class="img-shadow">
+        <div class="row">
+            <div class="col-md-6 col-md-pull-1">
+                <div>
                     <img src="/images/users/<?= $user['img']??'default_img.jpg'?>" class="img-responsive" width="550" height="250"  alt="picture of you">
                 </div>
                 <?= $form->field($user, 'file')->fileInput() ?>
 
             </div>
 
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+            <div class="col-md-6">
                 <h2><?= $user['first_name'].' '.$user['last_name']?></h2>
                 <div class="row">
                     <div class="col-lg-10">

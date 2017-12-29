@@ -1,6 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\Blog;
+use backend\models\ShopProduct;
+use frontend\models\Comment;
 use frontend\models\UserInfo;
 use UploadForm;
 use Yii;
@@ -22,9 +25,6 @@ use yii\web\User;
  */
 class SiteController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
@@ -47,9 +47,6 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function actions()
     {
         return [
@@ -63,24 +60,29 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
     public function actionIndex()
     {
-        $users = \common\models\User::selectAll(array(5,10));
-
-//        var_dump($users);die();
-        return $this->render('index',['model' => $users]);
+        return $this->render('index',['products' => ShopProduct::find()->all()]);
     }
 
-    /**
-     * Logs in a user.
-     *
-     * @return mixed
-     */
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->redirect('personal-area');
+                }
+            }
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+    }
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -106,11 +108,6 @@ class SiteController extends Controller
 //        }
     }
 
-    /**
-     * Logs out the current user.
-     *
-     * @return mixed
-     */
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -150,41 +147,17 @@ class SiteController extends Controller
 
     }
 
-    /**
-     * Signs user up.
-     *
-     * @return mixed
-     */
-    public function actionSignup()
+    public function actionAbout()
     {
-        $model = new SignupForm();
-
-
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->redirect('personal-area');
-                }
-            }
+        $model = new Comment();
+        if ($model->load(Yii::$app->request->post()))
+        {
+            var_dump($_POST);die();
         }
-
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
+        return $this->render('about');
     }
 
-    public function actionUserList()
-    {
-        $users = \common\models\User::selectAll();
 
-        return $this->render('users', [
-            'model' => $users,
-        ]);
-    }
 
-    public function actionUser()
-    {
-//        var_dump($this->identifier);die();
-    }
 
 }

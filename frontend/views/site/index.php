@@ -1,94 +1,183 @@
-<?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'DreamTeam.com';
-?>
-<div>
-
-
-    <section id="gtco-about" data-section="about">
-        <div class="container">
-            <div>
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Welcome To Our Law Offices</h1>
-                    <p>
-                        Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias au
-                        tem provident. Odit ab aliquam dolor eius.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-md-pull-1">
-                    <div>
-                        <img src="images/img_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                    <h2 class="heading-colored">Excellence &amp; Honesty   &amp; Coach</h2>
-                    <p></p>
-                    <p><a href="#" class="read-more">Read more <i class="icon-chevron-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gtco-our-team" data-section="our-team">
-        <div class="container">
-            <div class="row row-pb-md">
-                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
-                    <h1>Our Team</h1>
-                    <p class="sub">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                    <p class="subtle-text animate-box" data-animate-effect="fadeIn">Our Team</p>
-                </div>
-            </div>
-
-
-            <div class="row team-item gtco-team-reverse">
-                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
-                    <div class="img-shadow">
-                        <img src="images/img_team_1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
-                    <h2>Matvey Svetlichny</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
-
-            <div class="row team-item gtco-team">
-                <div class="col-md-6 col-md-pull-1 animate-box"  data-animate-effect="fadeInLeft">
-                    <div class="img-shadow">
-                        <img src="images/img_team_2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                    <h2>Yulia Emelyanenko</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
 
 
 
-            <div class="row team-item gtco-team-reverse">
-                <div class="col-md-6 col-md-push-7 animate-box" data-animate-effect="fadeInRight">
-                    <div class="img-shadow">
-                        <img src="images/img_team_3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                    </div>
-                </div>
-                <div class="col-md-6  col-md-pull-6 animate-box" data-animate-effect="fadeInRight">
-                    <h2>Karina Papyan</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus aliquid maiores, voluptatum ex. Accusantium, eum distinctio laudantium. Perferendis dolor, corporis quasi? Tempore quod molestiae quis cumque pariatur dolore vel sit, fugit delectus quasi reprehenderit officia voluptate incidunt, culpa odit impedit qui dolorum fugiat. Quidem possimus reprehenderit, quae recusandae voluptatibus magnam!</p>
-                    <p>Ratione facilis quod laborum eaque illo dolore blanditiis nobis dicta voluptatem fugit optio, eveniet non dolor quia delectus, sint, dignissimos atque porro consequuntur unde. Soluta ex necessitatibus delectus saepe aliquam, culpa officiis doloremque, ipsa facere hic, voluptatem accusantium veniam, quasi! Explicabo accusantium sint, corporis consequuntur fugit ipsam, dolorum excepturi adipisci.</p>
-                </div>
-            </div>
+<div class="site-content sidebars-left has-sidebars">
+    <div class="container">
+        <div class="row">
+
+            <div class="flat-projects-sidebars">
+                <div class="flat-projects projects-grid projects-shortcode projects-sidebars">
+                    <div class="projects-items">
+
+                    <?php foreach($products as $product):?>
+                        <div class="projects flat-column-3 hentry handmade photos">
+                            <div class="project-wrap">
+                                <div class="project-thumbnail">
+                                    <a href="#">
+                                        <img src="/images/portfolio/10.jpg" alt="images">
+                                    </a>
+                                </div>
+                                <div class="project-info">
+                                    <div class="project-info-wrap">
+                                        <h3 class="project-title">
+                                            <a href="#"><?= $product['title']?></a>
+                                        </h3>
+                                        <ul class="project-categories">
+                                            <li><a href="#"><?= $product['category_id']?></a></li>
+                                        </ul>
+                                        <h6 class="project-buttons">
+                                            <a href="#" class="flat-button outline white">Quick View</a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div><!-- /.project-wrap -->
+                        </div><!-- /.hentry -->
 
 
 
+                    <?php endforeach;?>
+                    </div><!-- /.projects-items -->
 
-        </div>
-    </section>
-</div>
+                </div><!-- /.projects-masonry -->
+            </div><!-- /.projects-sidebars -->
+            <div class="flat-sidebars">
+                <div class="sidebars">
+                    <div class="sidebars-wrap">
+                        <div class="widget widget_search">
+                            <form method="get" class="search-form">
+                                <label>
+                                    <input type="search" class="search-field" placeholder="Search …">
+                                </label>
+                                <input type="submit" class="search-submit" value="Search">
+                            </form>
+                        </div><!-- /.widget .widget_search -->
+
+                        <div class="widget widget_text">
+                            <h3 class="widget-title">About iDsgn</h3>
+                            <div class="textwidget">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        </div><!-- /.widget .widget_text -->
+
+                        <div class="widget widget_text">
+                            <h3 class="widget-title">Our Portfolio</h3>
+                            <div class="textwidget flat-projects projects-grid projects-shortcode">
+                                <div class="projects-carousel">
+                                    <div class="projects-items">
+                                        <div class="projects hentry">
+                                            <div class="project-wrap">
+                                                <div class="project-thumbnail">
+                                                    <a href="portfolio-single-list.html">
+                                                        <img src="images/portfolio/3.jpg" alt="images">
+                                                    </a>
+                                                </div>
+                                                <div class="project-info">
+                                                    <div class="project-info-wrap">
+                                                        <h3 class="project-title">
+                                                            <a href="portfolio-single-list.html">Living the moo life</a>
+                                                        </h3>
+                                                        <ul class="project-categories">
+                                                            <li><a href="#">Handmade</a></li>
+                                                            <li><a href="#">Photos</a></li>
+                                                        </ul>
+                                                        <h6 class="project-buttons">
+                                                            <a href="portfolio-single-list.html" class="flat-button outline white">Quick View</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.project-wrap -->
+                                        </div><!-- /.hentry -->
+                                    </div>
+                                    <div class="projects-items">
+                                        <div class="projects hentry">
+                                            <div class="project-wrap">
+                                                <div class="project-thumbnail">
+                                                    <a href="portfolio-single-list.html">
+                                                        <img src="images/portfolio/4.jpg" alt="images">
+                                                    </a>
+                                                </div>
+                                                <div class="project-info">
+                                                    <div class="project-info-wrap">
+                                                        <h3 class="project-title">
+                                                            <a href="portfolio-single-list.html">In the Faroe Islands</a>
+                                                        </h3>
+                                                        <ul class="project-categories">
+                                                            <li><a href="#">Handmade</a></li>
+                                                            <li><a href="#">Photos</a></li>
+                                                        </ul>
+                                                        <h6 class="project-buttons">
+                                                            <a href="portfolio-single-list.html" class="flat-button outline white">Quick View</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.project-wrap -->
+                                        </div><!-- /.hentry -->
+                                    </div>
+                                    <div class="projects-items">
+                                        <div class="projects hentry">
+                                            <div class="project-wrap">
+                                                <div class="project-thumbnail">
+                                                    <a href="portfolio-single-list.html">
+                                                        <img src="images/portfolio/6.jpg" alt="images">
+                                                    </a>
+                                                </div>
+                                                <div class="project-info">
+                                                    <div class="project-info-wrap">
+                                                        <h3 class="project-title">
+                                                            <a href="portfolio-single-list.html">Leather iphone case</a>
+                                                        </h3>
+                                                        <ul class="project-categories">
+                                                            <li><a href="#">Handmade</a></li>
+                                                            <li><a href="#">Photos</a></li>
+                                                        </ul>
+                                                        <h6 class="project-buttons">
+                                                            <a href="portfolio-single-list.html" class="flat-button outline white">Quick View</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.project-wrap -->
+                                        </div><!-- /.hentry -->
+                                    </div>
+                                    <div class="projects-items">
+                                        <div class="projects hentry">
+                                            <div class="project-wrap">
+                                                <div class="project-thumbnail">
+                                                    <a href="portfolio-single-list.html">
+                                                        <img src="images/portfolio/5.jpg" alt="images">
+                                                    </a>
+                                                </div>
+                                                <div class="project-info">
+                                                    <div class="project-info-wrap">
+                                                        <h3 class="project-title">
+                                                            <a href="portfolio-single-list.html">Ligature Collective</a>
+                                                        </h3>
+                                                        <ul class="project-categories">
+                                                            <li><a href="#">Handmade</a></li>
+                                                            <li><a href="#">Photos</a></li>
+                                                        </ul>
+                                                        <h6 class="project-buttons">
+                                                            <a href="portfolio-single-list.html" class="flat-button outline white">Quick View</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.project-wrap -->
+                                        </div><!-- /.hentry -->
+                                    </div>
+                                </div><!-- /.projects-carousel -->
+                            </div>
+                        </div><!-- /.widget .widget_text -->
+                        <div class="widget widget_meta">
+                            <h3 class="widget-title">Meta</h3>
+                            <ul>
+                                <li><a href="#">Log in</a></li>
+                                <li><a href="#">Entries <abbr>RSS</abbr></a></li>
+                                <li><a href="#">Comments <abbr>RSS</abbr></a></li>
+                                <li><a href="https://wordpress.org/">WordPress.org</a></li>
+                            </ul>
+                        </div><!-- /.widget .widget_meta -->
+                    </div><!-- /.sidebars-wrap -->
+                </div><!-- /.sidebars -->
+            </div><!-- /.flat-sidebars -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /#site-content -->
+
+

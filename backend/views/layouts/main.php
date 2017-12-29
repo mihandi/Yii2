@@ -38,7 +38,9 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Blog', 'url' => ['/blog/index']],
-        ['label' => 'Users', 'url' => ['/user-info/index']]
+        ['label' => 'Categories', 'url' => ['/category/index']],
+        ['label' => 'Shop', 'url' => ['/shop/index']],
+        ['label' => 'ProductCategory', 'url' => ['/product-category/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -80,3 +82,9 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
+<script>
+    $(function() {
+        $('textarea#froala-editor').froalaEditor()
+    });
+</script>

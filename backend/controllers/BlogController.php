@@ -2,12 +2,14 @@
 
 namespace backend\controllers;
 
+use backend\models\Category;
 use Yii;
 use backend\models\Blog;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -64,12 +66,28 @@ class BlogController extends Controller
     public function actionCreate()
     {
         $model = new Blog();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->user_id = Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            if($model->validate()){
+                $model->save();
+
+                if ($file = UploadedFile::getInstance($model,'file'))
+                {
+                    $filename = 'article_img_'.$model->id.'.jpg';
+                    $model->image = $filename;
+                    $file->saveAs(YII::getAlias('@frontendWeb').'/images/blog/'.$filename);
+                    $model->save();
+                }
+
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'category' => Category::find()->all()
             ]);
         }
     }
@@ -89,6 +107,7 @@ class BlogController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'category' => Category::find()->all()
             ]);
         }
     }

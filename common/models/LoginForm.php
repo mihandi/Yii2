@@ -67,9 +67,7 @@ class LoginForm extends Model
     {
         return Yii::$app->user->login($this->getUser());
     }
-
-
-
+    
     public function getUser()
     {
         return User::findOne(['email' => $this->email]);
